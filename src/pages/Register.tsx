@@ -252,7 +252,7 @@ export default function Register() {
 
           <div className="text-center">
             <Link
-              to="/login"
+              to="/elegantcuts/login"
               className="btn btn-secondary w-full py-3 flex items-center justify-center space-x-2"
             >
               <span>Iniciar Sesión</span>

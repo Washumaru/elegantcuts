@@ -132,7 +132,7 @@ export default function Login() {
 
           <div className="text-center space-y-4">
             <Link
-              to="/register"
+              to="/elegantcuts/register"
               className="btn btn-secondary w-full py-3 flex items-center justify-center space-x-2"
             >
               <span>Crear Cuenta</span>

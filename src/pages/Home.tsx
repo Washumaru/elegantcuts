@@ -158,7 +158,7 @@ export default function Home() {
                 <p className="text-primary-100">Muestra tu trabajo y construye tu reputación</p>
               </div>
             </div>
-            <a href="/register" className="btn bg-white text-primary-900 hover:bg-primary-50 inline-flex items-center space-x-2 py-3 px-8 text-lg">
+            <a href="/elegantcuts/register" className="btn bg-white text-primary-900 hover:bg-primary-50 inline-flex items-center space-x-2 py-3 px-8 text-lg">
               <span>Registrarme como Barbero</span>
               <ArrowRight className="w-5 h-5" />
             </a>

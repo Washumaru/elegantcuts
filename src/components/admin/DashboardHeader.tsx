@@ -16,14 +16,14 @@ export default function DashboardHeader({ onNavigate }: DashboardHeaderProps) {
           </div>
           <div className="flex items-center space-x-4">
             <button
-              onClick={() => onNavigate('/admin/shops')}
+              onClick={() => onNavigate('/elegantcuts/admin/shops')}
               className="btn bg-white/10 hover:bg-white/20 text-white border-white/20 flex items-center space-x-2 backdrop-blur-sm transition-all duration-200"
             >
               <Store className="w-4 h-4" />
               <span>Gestión de Locales</span>
             </button>
             <button
-              onClick={() => onNavigate('/admin')}
+              onClick={() => onNavigate('/elegantcuts/admin')}
               className="btn bg-white/10 hover:bg-white/20 text-white border-white/20 flex items-center space-x-2 backdrop-blur-sm transition-all duration-200"
             >
               <Settings className="w-4 h-4" />

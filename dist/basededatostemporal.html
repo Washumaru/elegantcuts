@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Base de Datos Temporal - Elegant Cuts</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            margin: 2rem;
+            background: #fdf8f6;
+            color: #43302b;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            background: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        th, td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid #eaddd7;
+        }
+        th {
+            background: #a18072;
+            color: white;
+        }
+        .badge {
+            padding: 0.25rem 0.5rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+        }
+        .badge-client { background: #dcfce7; color: #166534; }
+        .badge-barber { background: #dbeafe; color: #1e40af; }
+        .badge-admin { background: #f3e8ff; color: #6b21a8; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Base de Datos Temporal - Elegant Cuts</h1>
+        <div id="userData">
+            <!-- Los datos se insertarán aquí dinámicamente -->
+        </div>
+    </div>
+    <script>
+        // Función para actualizar la visualización de los datos
+        function updateDisplay() {
+            const userData = document.getElementById('userData');
+            const users = JSON.parse(localStorage.getItem('elegant-cuts-db') || '[]');
+            
+            if (users.length === 0) {
+                userData.innerHTML = '<p>No hay usuarios registrados</p>';
+                return;
+            }
+
+            let html = `
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Email</th>
+                            <th>Rol</th>
+                            <th>Estado</th>
+                            <th>Fecha de Registro</th>
+                            ${users.some(u => u.barberKey) ? '<th>Clave de Barbero</th>' : ''}
+                        </tr>
+                    </thead>
+                    <tbody>
+            `;
+
+            users.forEach(user => {
+                const roleClass = {
+                    client: 'badge-client',
+                    barber: 'badge-barber',
+                    admin: 'badge-admin'
+                }[user.role];
+
+                html += `
+                    <tr>
+                        <td>${user.id}</td>
+                        <td>${user.name}</td>
+                        <td>${user.email}</td>
+                        <td><span class="badge ${roleClass}">${user.role}</span></td>
+                        <td>${user.status}</td>
+                        <td>${new Date(user.createdAt).toLocaleString()}</td>
+                        ${user.barberKey ? `<td>${user.barberKey}</td>` : ''}
+                    </tr>
+                `;
+            });
+
+            html += `
+                    </tbody>
+                </table>
+            `;
+
+            userData.innerHTML = html;
+        }
+
+        // Actualizar la visualización cada segundo
+        setInterval(updateDisplay, 1000);
+
+        // Actualizar la visualización inicial
+        updateDisplay();
+    </script>
+</body>
+</html>

@@ -159,7 +159,7 @@ export default function Home() {
               </div>
             </div>
             <a href="/elegantcuts/register" className="btn bg-white text-primary-900 hover:bg-primary-50 inline-flex items-center space-x-2 py-3 px-8 text-lg">
-              <span>Registrarme como Barbero</span>
+              
               <ArrowRight className="w-5 h-5" />
             </a>
           </div>

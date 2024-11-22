@@ -19,17 +19,17 @@ function App() {
       <Navbar />
       <main className="container mx-auto px-4 py-8">
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/admin-login" element={<AdminLogin />} />
+          <Route path="/elegantcuts" element={<Home />} />
+          <Route path="/elegantcuts/login" element={<Login />} />
+          <Route path="/elegantcuts/register" element={<Register />} />
+          <Route path="/elegantcuts/admin-login" element={<AdminLogin />} />
           {isAuthenticated && (
             <>
-              <Route path="/dashboard/*" element={<Dashboard />} />
+              <Route path="/elegantcuts/dashboard/*" element={<Dashboard />} />
               {user?.role === 'admin' && (
                 <>
-                  <Route path="/admin" element={<AdminPanel />} />
-                  <Route path="/admin/shops" element={<AdminShopManagement />} />
+                  <Route path="/elegantcuts/admin" element={<AdminPanel />} />
+                  <Route path="/elegantcuts/admin/shops" element={<AdminShopManagement />} />
                 </>
               )}
             </>

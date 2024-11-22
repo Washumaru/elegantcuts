@@ -15,7 +15,7 @@ export default function Navbar() {
     if (window.confirm('¿Estás seguro que deseas cerrar sesión?')) {
       logout();
       toast.success('Sesión cerrada exitosamente');
-      navigate('/login');
+      navigate('/elegantcuts/login');
     }
   };
 
@@ -25,7 +25,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link 
-            to="/" 
+            to="/elegantcuts" 
             className="flex items-center space-x-3 group transition-all duration-300"
           >
             <div className="bg-white/10 p-2 rounded-lg backdrop-blur-sm group-hover:bg-white/20 transition-all duration-300">
@@ -61,7 +61,7 @@ export default function Navbar() {
                 
                 <div className="flex items-center space-x-4">
                   <Link 
-                    to="/dashboard" 
+                    to="/elegantcuts/dashboard" 
                     className="flex items-center space-x-2 px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 transition-colors duration-200"
                   >
                     <User className="w-5 h-5" />
@@ -80,13 +80,13 @@ export default function Navbar() {
             ) : (
               <div className="flex items-center space-x-4">
                 <Link
-                  to="/login"
+                  to="/elegantcuts/login"
                   className="px-6 py-2 rounded-lg bg-white/10 hover:bg-white/20 transition-colors duration-200"
                 >
                   Iniciar Sesión
                 </Link>
                 <Link
-                  to="/register"
+                  to="/elegantcuts/register"
                   className="px-6 py-2 rounded-lg bg-white text-primary-900 hover:bg-primary-50 transition-colors duration-200"
                 >
                   Registrarse
@@ -111,7 +111,7 @@ export default function Navbar() {
                 </div>
                 <div className="space-y-3">
                   <Link
-                    to="/dashboard"
+                    to="/elegantcuts/dashboard"
                     className="flex items-center space-x-2 px-4 py-3 rounded-lg bg-white/10 hover:bg-white/20 transition-colors duration-200"
                     onClick={() => setIsMenuOpen(false)}
                   >
@@ -130,14 +130,14 @@ export default function Navbar() {
             ) : (
               <div className="space-y-3">
                 <Link
-                  to="/login"
+                  to="/elegantcuts/login"
                   className="block px-4 py-3 rounded-lg bg-white/10 hover:bg-white/20 text-center transition-colors duration-200"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Iniciar Sesión
                 </Link>
                 <Link
-                  to="/register"
+                  to="/elegantcuts/register"
                   className="block px-4 py-3 rounded-lg bg-white text-primary-900 hover:bg-primary-50 text-center transition-colors duration-200"
                   onClick={() => setIsMenuOpen(false)}
                 >

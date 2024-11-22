@@ -34,7 +34,7 @@ export default function Login() {
       const response = await authService.login(data.email, data.password);
       setAuth(response.user, response.token);
       toast.success('¡Iniciado sesión exitosamente!');
-      navigate('/dashboard');
+      navigate('/elegantcuts/dashboard');
     } catch (error) {
       // Error handling is done in the service
     } finally {

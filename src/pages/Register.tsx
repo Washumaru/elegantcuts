@@ -71,7 +71,7 @@ export default function Register() {
       });
       
       toast.success('¡Registro exitoso! Por favor inicia sesión.');
-      navigate('/login');
+      navigate('/elegantcuts/login');
     } catch (error) {
       toast.error('El registro falló. Por favor inténtalo de nuevo.');
     } finally {

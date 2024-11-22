@@ -232,7 +232,7 @@ export default function AdminShopManagement() {
             </div>
           </div>
           <button
-            onClick={() => navigate('/dashboard')}
+            onClick={() => navigate('/elegantcuts/dashboard')}
             className="btn bg-white/10 hover:bg-white/20 text-white border-white/20 flex items-center space-x-2"
           >
             <ArrowLeft className="w-4 h-4" />

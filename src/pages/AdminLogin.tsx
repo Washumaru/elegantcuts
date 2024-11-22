@@ -38,7 +38,7 @@ export default function AdminLogin() {
 
       login(adminUser, adminKey);
       toast.success('¡Bienvenido, Administrador!');
-      navigate('/admin');
+      navigate('/elegantcuts/admin');
     } catch (error: any) {
       toast.error(error.message || 'Error al iniciar sesión');
       setAdminKey('');

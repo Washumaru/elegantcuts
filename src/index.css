@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gradient-to-br from-primary-50 to-primary-100 text-primary-900 min-h-screen;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02";
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-lg font-medium transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-primary-50;
+  }
+  
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary-600 to-primary-700 text-white hover:from-primary-700 hover:to-primary-800 focus:ring-primary-500;
+  }
+  
+  .btn-secondary {
+    @apply bg-white text-primary-800 hover:bg-primary-50 border border-primary-200 focus:ring-primary-400;
+  }
+  
+  .input {
+    @apply w-full px-4 py-2 rounded-lg border border-primary-200 focus:outline-none focus:ring-2 focus:ring-primary-500 bg-white placeholder-primary-400 transition-shadow duration-200;
+  }
+
+  .input:hover {
+    @apply border-primary-300 shadow-sm;
+  }
+  
+  .card {
+    @apply bg-white rounded-xl shadow-sm border border-primary-100 p-6 hover:shadow-md transition-shadow duration-200;
+  }
+
+  .elegant-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: theme('colors.primary.400') theme('colors.primary.100');
+  }
+
+  .elegant-scroll::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  .elegant-scroll::-webkit-scrollbar-track {
+    @apply bg-primary-100 rounded-full;
+  }
+
+  .elegant-scroll::-webkit-scrollbar-thumb {
+    @apply bg-primary-400 rounded-full hover:bg-primary-500;
+  }
+}
+
+/* Animaciones suaves */
+.fade-enter {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.fade-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 300ms, transform 300ms;
+}
+
+/* Efectos de hover elegantes */
+.hover-lift {
+  transition: transform 0.2s ease-in-out;
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+}
+
+/* Efectos de glassmorphism */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Sombras suaves */
+.shadow-soft {
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Bordes redondeados consistentes */
+.rounded-consistent {
+  border-radius: 12px;
+}
+
+/* Efectos de transición suaves */
+.smooth-transition {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Efectos de foco mejorados */
+.focus-ring {
+  @apply focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-primary-50;
+}
+
+/* Tipografía mejorada */
+.heading-serif {
+  @apply font-serif tracking-tight;
+}
+
+.text-body {
+  @apply font-sans leading-relaxed;
+}
+
+/* Estados de carga y hover */
+.loading-shimmer {
+  background: linear-gradient(90deg, #f0f0f0 25%, #f7f7f7 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}

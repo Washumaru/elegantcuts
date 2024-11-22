@@ -170,3 +170,10 @@ export const getAllAdminKeys = async (): Promise<StoredKey[]> => {
 export const getAllBarberKeys = async (): Promise<StoredKey[]> => {
   return getStoredKeys('barber');
 };
+
+// Add this new function to expose admin key generation to window
+(window as any).generateNewAdminKey = async () => {
+  const key = await generateAdminKey();
+  console.log('Nueva clave de administrador:', key);
+  return key;
+};
